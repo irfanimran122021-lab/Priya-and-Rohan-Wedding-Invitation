@@ -1,0 +1,11 @@
+'use client';
+import {useState,type CSSProperties} from 'react';
+import {themeVariables} from '@/lib/themes';
+import {Countdown,OurStory,WeddingDetails,WeddingTimeline,DressCode,Gallery,RSVP,ClosingSection} from './Sections';
+import {wedding as w} from '@/lib/wedding';
+export function Names(){return <span className="names">{w.names[0]} <i>&</i> {w.names[1]}</span>}
+export function InvitationOpening({onOpen}:{onOpen:()=>void}){const[leaving,setLeaving]=useState(false);return <section className={`opening ${leaving?"leaving":""}`}><div className="opening-photo"/><div className="opening-frame"><p className="eyebrow">{w.intro.toUpperCase()}</p><h1><Names/></h1><p className="opening-invite">{w.invitation}</p><p className="eyebrow date-line">{w.dateOpening}</p><button className="button light" onClick={()=>{setLeaving(true);setTimeout(onOpen,window.matchMedia("(prefers-reduced-motion: reduce)").matches?0:550)}} disabled={leaving}>Open invitation</button><p className="opening-foot">A LIFETIME OF LOVE BEGINS HERE</p></div></section>}
+export function Hero(){return <section className="hero" id="home"><img src={w.photos.hero} srcSet="/images/hero-small.webp 800w, /images/hero.webp 1600w" sizes="100vw" alt="A couple sharing a quiet moment together" fetchPriority="high"/><div className="hero-shade"/><div className="hero-content"><p className="eyebrow">WE’RE GETTING MARRIED</p><h1 tabIndex={-1} id="main-title"><Names/></h1><p className="hero-date">{w.dateLabel} <span>·</span> {w.location}</p><div className="hero-rule"/><p className="hero-note">{w.heroNote}</p></div><a className="scroll-cue" href="#story">SCROLL TO DISCOVER<span>│</span></a></section>}
+export function Invitation(){const[opened,setOpened]=useState(false);return <div data-theme={w.theme} style={themeVariables(w.theme) as CSSProperties}>{!opened?<InvitationOpening onOpen={()=>{setOpened(true);setTimeout(()=>document.getElementById('main-title')?.focus(),60)}}/>:<><header className="nav"><a className="monogram" href="#home">{w.names[0][0]}<span>&</span>{w.names[1][0]}</a><nav aria-label="Invitation"><a href="#story">Our story</a><a href="#details">The day</a><a href="#rsvp">RSVP</a></nav><span className="nav-date">{w.dateShort}</span></header><main><Hero/><Countdown/><OurStory/><WeddingDetails/><WeddingTimeline/><DressCode/><Gallery/><RSVP/><ClosingSection/></main></>}</div>}
+
+
