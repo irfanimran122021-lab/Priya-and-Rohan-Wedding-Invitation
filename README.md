@@ -30,3 +30,14 @@ Local fonts: Cormorant Garamond and Italianno, from Google Fonts (SIL Open Font 
 
 ## Validation
 TypeScript check; browser checks at 390, 768 and 1440 pixels; manual visual review; gallery keyboard dismissal and controls; RSVP accept/decline; calendar download; route metadata; reduced motion. Preview and final build results are reported with the delivery.
+
+## September 2026 edit: envelope and Indian luxury styling
+The existing invitation has been retained. `EnvelopeOpening.tsx` adds the five physical envelope layers and a 3.8-second sequence, with a brief reveal for reduced-motion users. Only the embossed seal is clickable. The main invitation is mounted behind the envelope but remains inert and hidden from assistive technology until opening completes. Focus moves to the hero afterward; timers and scroll locks are cleaned up.
+
+`app/envelope.css` contains opening choreography and restrained cultural styling; `lib/themes.ts` adds the `indian-ivory` theme. The new sample date is December 12, 2026 (Guyana UTC−04:00); the RSVP deadline is November 12. Calendar timestamps and metadata use the new date.
+
+Current couple photographs are real stock photography by ARTO SURAJ, with matching subjects:
+- Landscape portrait: https://unsplash.com/photos/U24mGMjnIIo
+- Vertical portrait: https://unsplash.com/photos/d9RsO9BHFVQ
+
+The gold wax seal was generated specifically for this invitation and optimized with transparency. Previous photographs remain in the source history; the invitation now references the new Indian couple photographs. The existing venues remain sample venues and need confirmation for a real invitation.
