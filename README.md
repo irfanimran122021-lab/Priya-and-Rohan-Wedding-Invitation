@@ -12,7 +12,7 @@ The existing invitation, refined with burgundy stationery, an antique-gold P & R
 - `app/layout.tsx`: metadata derives from the wedding configuration.
 - `/wedding/priya-and-rohan`: shareable route; the existing route remains compatible.
 
-Parc Rayne at Rahaman’s Park, Houston, East Bank Demerara, Guyana is the provided venue. Ceremony details and times are unconfirmed. Calendar downloads use an all-day December 12, 2026 event until times are supplied. The timeline is explicitly an outline. Date, story and RSVP deadline remain demonstration content.
+Parc Rayne at Rahaman’s Park, Houston, East Bank Demerara, Guyana is the provided venue. The celebration begins December 12, 2026 at 6:30 PM in Georgetown, Guyana. The end time is unconfirmed. Save the Date offers Google Calendar, Apple Calendar, Outlook, and ICS download. The timeline is explicitly an outline. Date, story and RSVP deadline remain demonstration content.
 
 ## RSVP
 This demonstration does not send or store replies. Set `rsvpEndpoint` to an HTTPS backend to enable delivery. The adapter posts `{name, attendance, guests, message, weddingSlug}`. Declines set guests to zero. Validate and store replies on the server and return success only after acceptance. Keep secrets out of client configuration.
@@ -38,3 +38,4 @@ Images are locally optimized WebP with responsive variants. The custom P & R wax
 
 ## Validation
 Browser checks cover 360, 375, 390, 412, 430, 768 and 1440 pixel viewports, keyboard/reduced-motion opening, image loading, horizontal overflow, full-screen gallery navigation/dismissal, RSVP accept/decline and demo feedback, directions and all-day calendar downloads. Actual animation frames and page sections are visually inspected.
+
