@@ -20,6 +20,13 @@ This demonstration does not send or store replies. Set `rsvpEndpoint` to an HTTP
 ## Development
 TypeScript, React and Sites’ Next-compatible Vinext runtime. Use Node 22.13 or newer: `npm ci`, `npm run dev`, `npx tsc --noEmit`, `npm run build`.
 
+## Vercel deployment
+Import this project folder (`outputs/wedding-invitation` if importing the parent workspace) as the Vercel Root Directory. The checked-in `vercel.json` selects Next.js, installs with `npm ci`, and runs `npm run build:vercel`, producing `.next`. Use Node 22.x or 24.x. No environment variables are required for this demonstration.
+
+`npm run build` and `npm run dev` retain the existing Sites/Cloudflare workflow. For the Vercel production runtime locally, run `npm run build:vercel` followed by `npm run start:vercel -- --port 3000`. The same application, styles and assets are used for both targets. Do not override Vercel's build command with the Sites build, or set its output directory to `dist`.
+
+RSVP remains an explicitly labelled demo until a real backend is configured. The existing Sites metadata origin remains in `app/layout.tsx`; update it to the final custom domain when migrating the live invitation. A successful local Next.js build does not imply the project has been deployed to a Vercel account.
+
 ## Assets
 Matching real stock couple photos by ARTO SURAJ on Unsplash:
 - https://unsplash.com/photos/U24mGMjnIIo
